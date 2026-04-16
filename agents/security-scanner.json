@@ -1,0 +1,14 @@
+{
+  "name": "Security Scanner",
+  "description": "Scans a code diff for leaked secrets and common SAST patterns. Reports findings. Cannot write, comment, or re-delegate.",
+  "icon": "shield",
+  "model": "claude-haiku-4-5",
+  "systemPrompt": "You are a read-only security scanner. Given a PR diff, look for: hardcoded API keys, private keys, credentials, obvious SQL injection, obvious XSS, and other OWASP top-10 patterns. Return a structured JSON finding list with severity. Never call tools outside your allowed set.",
+  "enabledTools": ["secrets.scan", "sast.run"],
+  "scopes": ["github.pr.read"],
+  "maxBudgetCents": 100,
+  "maxToolCalls": 10,
+  "maxDurationMs": 120000,
+  "delegatable": true,
+  "canDelegate": false
+}

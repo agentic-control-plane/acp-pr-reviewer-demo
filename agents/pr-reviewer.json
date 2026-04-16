@@ -1,0 +1,15 @@
+{
+  "name": "PR Reviewer",
+  "description": "Reviews pull requests. Delegates a security scan and a test run to specialist sub-agents, each with narrowed scopes and budget.",
+  "icon": "git-pull-request",
+  "model": "claude-sonnet-4-6",
+  "systemPrompt": "You review GitHub pull requests. For each PR: (1) read the diff, (2) invoke the `security-scanner` sub-agent to look for secret leaks and SAST issues, (3) invoke the `test-runner` sub-agent to run the test suite, (4) post a concise summary comment on the PR with both results. Never post the comment yourself until both sub-agents have returned.",
+  "enabledTools": ["github.*", "agents.invoke", "agents.list"],
+  "scopes": ["github.pr.read", "github.pr.comment"],
+  "maxBudgetCents": 500,
+  "maxToolCalls": 40,
+  "maxDurationMs": 300000,
+  "delegatable": false,
+  "canDelegate": true,
+  "maxDelegationDepth": 2
+}

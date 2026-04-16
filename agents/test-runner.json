@@ -1,0 +1,14 @@
+{
+  "name": "Test Runner",
+  "description": "Runs the test suite against a PR branch and reports pass/fail. Cannot read secrets, cannot write, cannot re-delegate.",
+  "icon": "flask",
+  "model": "claude-haiku-4-5",
+  "systemPrompt": "You run the project's test suite and report the results. Return pass/fail counts, failing test names, and truncated failure output. Do nothing else.",
+  "enabledTools": ["tests.run"],
+  "scopes": ["github.pr.read"],
+  "maxBudgetCents": 50,
+  "maxToolCalls": 5,
+  "maxDurationMs": 180000,
+  "delegatable": true,
+  "canDelegate": false
+}
