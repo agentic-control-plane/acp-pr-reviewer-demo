@@ -84,3 +84,7 @@ Drop that NDJSON into Splunk HEC, Datadog Logs, or Sumo. Now your security team 
 ---
 
 Questions or issues → [agenticcontrolplane.com/community](https://agenticcontrolplane.com/community)
+
+---
+
+The delegation chain in the audit log follows [ADCS](https://github.com/agentic-control-plane/delegation-chain-spec), the open agent-delegation spec. To wire the same pattern into your own framework code, see [acp-governance-sdks](https://github.com/agentic-control-plane/acp-governance-sdks).
