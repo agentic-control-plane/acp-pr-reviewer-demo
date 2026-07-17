@@ -6,7 +6,7 @@ A three-agent pull-request reviewer that shows how [Agentic Control Plane](https
 - **Budget propagates** and can only shrink (runaway bills stop at the first over-budget sub-call).
 - **The human at the root is preserved** — every audit log entry traces back to the person who opened the PR.
 
-This is a demo of [A2A governance](https://agenticcontrolplane.com/agent-to-agent), not a real CI bot. The two tools `secrets.scan` and `sast.run` are illustrative — wire them to your actual scanner (Trufflehog, Semgrep, etc.) via a custom connector.
+This is a demo of [A2A governance](https://agenticcontrolplane.com/agent-to-agent), not a real CI bot. A fuller, runnable Python version of the same pattern is written up in [Build a governed GitHub PR reviewer](https://agenticcontrolplane.com/blog/build-a-governed-github-pr-reviewer) — part of the [Governed Agent Recipes series](https://agenticcontrolplane.com/series/governed-recipes). The two tools `secrets.scan` and `sast.run` are illustrative — wire them to your actual scanner (Trufflehog, Semgrep, etc.) via a custom connector.
 
 ## The chain
 
